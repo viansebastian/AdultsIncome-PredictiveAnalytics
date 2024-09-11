@@ -356,7 +356,7 @@ Pada visualisasi fitur numerik terhadap income, dapat dilihat bahwa kurang terli
 
 3. Pada gambar 2.2 dan 2.4, status dan relationship, terlihat bahwa sampel yang berada dalam hubungan pernikahan yang sehat akan memiliki income yang lebih tinggi dibandingkan status yang lain, dan ini dikuatkan pada analisis terhadap relationship.
 
-![Correlation matrix](sub1_pa/corrMat.png?raw=true "Correlation Matrix")
+![Correlation matrix](Sub1_PA/corrMat.png?raw=true "Correlation Matrix")
 Gambar 3.0: Correlation matrix variabel-variabel
 
 Hasil dari correlation matrix di atas menunjukkan bahwa fitur yang kuat seperti educationClass tidak terlalu jauh nilai korelasinya dengan nilai rendah, seperti capital-gain. Maka dari itu, tidak akan dilakukan drop kolom lagi. 
@@ -549,7 +549,7 @@ F1 Score adalah sebuah nilai harmonis yang menggunkan presisi dan Recall, artiny
 
 ---
 - Visualization
-![Train Acc](sub1_pa/trainAcc.png?raw=true "Train Accuracies Result")
+![Train Acc](Sub1_PA/trainAcc.png?raw=true "Train Accuracies Result")
 Gambar 4.0: Hasil model training
 
 Table 2.0 Evaluasi training Accuracy, Precision, Recall, dan F1 Score data Dropped One Hot Encoded
@@ -628,12 +628,12 @@ Table 3.2 Evaluasi training Accuracy, Precision, Recall, dan F1 Score data KNN I
 
 Ringkasan dan visualisasi dari metode-metode data handling, dan akurasinya dapat dilihat sebagai berikut. 
 
-![Test Acc](Sub1_pa/testAcc.png?raw=true "Test Accuracies Result")
+![Test Acc](Sub1_PA/testAcc.png?raw=true "Test Accuracies Result")
 Gambar 5.0: Hasil testing
 
 Hasil tes yang akan ditinjau, dan digunakan untuk prediksi akhir, adalah dari test data dengan Dropped Encoded. Hal ini dikarenakan metode Drop adalah metode terbaik dalam menjaga integritas data, dimana hasilnya dapat dilihat dari visualisasi Confusion Matrix berikut. 
 
-![Confusion Matrix](sub1_pa/confusionMatrix.png?raw=true "Test Confusion Matrix")
+![Confusion Matrix](Sub1_PA/confusionMatrix.png?raw=true "Test Confusion Matrix")
 Gambar 5.1: Confusion matrix testing
 
 
