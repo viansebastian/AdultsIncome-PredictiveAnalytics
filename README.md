@@ -1,92 +1,95 @@
-# ***Laporan Proyek Machine Learning: Predictive Analytics On Adults Income - Vian Sebastian Bromokusumo***
+# ***Machine Learning Project Report: Predictive Analytics On Adults Income - Vian Sebastian Bromokusumo***
 
 
-## ***Domain Proyek***
+## ***Project Domain***
 
 
-**Latar Belakang**
+**Background**
 
-Menurut survei oleh Badan Pusat Statistik Indonesia yang dipublikasikan pada 6 November 2023, tingkat pengangguran di Indonesia adalah sebesar 5,32 persen [[1]](https://www.bps.go.id/id/pressrelease/2023/11/06/2002/tingkat-pengangguran-terbuka--tpt--sebesar-5-32-persen-dan-rata-rata-upah-buruh-sebesar-3-18-juta-rupiah-per-bulan.html). Meskipun hal ini merupakan penurunan dari tahun-tahun sebelumnya, hal ini tetap menjadi isu yang perlu terus diselesaikan. Hasil penelitian Pramudjasi dan Juliansyah, 2019 dalam Jurnal FEB Unmul [[2]](https://journal.feb.unmul.ac.id/index.php/KINERJA/article/download/5284/472) menyatakan bahwa jumlah penduduk berpengaruh positif terhadap tingkat pengangguran secara signifikan. Hal ini dikuatkan pula dalam penelitian Sari dan Pangestuty , 2022 dalam  [[3]](https://jdess.ub.ac.id/index.php/jdess/article/download/78/57/373) menyatakan bahwa pertambahan jumlah penduduk berdampak pada kenaikan Tingkat Pengangguran Terbuka. Berbagai survei dan penemuan dari jurnal akademik ini menjadi latar belakang Penulis dalam mencoba menganalisa faktor-faktor apa saja yang memiliki keterkaitan kuat terhadap pengangguran, pekerjaan, terutama faktor yang memiliki keterkaitan terhadap pendapatan yang tinggi. 
+According to a survey by the Central Statistics Agency of Indonesia published on November 6, 2023, the unemployment rate in Indonesia is 5.32 percent [[1]](https://www.bps.go.id/id/pressrelease/2023/11/06/2002/tingkat-pengangguran-terbuka--tpt--sebesar-5-32-persen-dan-rata-rata-upah-buruh-sebesar-3-18-juta-rupiah-per-bulan.html).Although this is a decrease from previous years, it remains an issue that needs to be resolved. The results of the study by Pramudjasi and Juliansyah, 2019 in the FEB Unmul Journal [[2]](https://journal.feb.unmul.ac.id/index.php/KINERJA/article/download/5284/472) stated that the population has a significant positive effect on the unemployment rate. This is also confirmed in the research of Sari and Pangestuty, 2022 in  [[3]](https://jdess.ub.ac.id/index.php/jdess/article/download/78/57/373) stating that population growth has an impact on the increase in the Open Unemployment Rate. Various surveys and findings from this academic journal are the background for the Author in trying to analyze what factors have a strong relationship to unemployment, employment, especially factors that are related to high income.
 
-Proyek ini difokuskan pada analisis dataset "Adults Income" dengan tujuan untuk mengidentifikasi dan memprediksi faktor-faktor yang memiliki korelasi tinggi, atau bahkan berkontribusi terhadap pekerjaan terutama jumalah pendapatan seseorang. Dalam hal ini, target fitur dari dataset ini adalah apakah pendapatan per tahun seseorang <50.000 dolar atau >= 50.000 dolar per tahun, sehingga proyek ini akan menyelesaikan kasus klasifikasi. Meskipun dataset ini diambil dari data sensus 1996, dataset ini masih memiliki relevansi yang signifikan di masa kini, karena sifat umum dari variabel-variabel di dataset ini dan tidak adanya perubahan yang drastis pada komponen-komponen penentu penghasilan. 
+This project focuses on the analysis of the "Adults Income" dataset with the aim of identifying and predicting factors that have a high correlation, or even contribute to employment, especially the amount of income of a person. In this case, the target feature of this dataset is whether a person's annual income is <50,000 dollars or >= 50,000 dollars per year, so this project will solve the classification case. Although this dataset is taken from the 1996 census data, this dataset still has significant relevance today, due to the general nature of the variables in this dataset and the absence of drastic changes in the components that determine incomedanya perubahan yang drastis pada komponen-komponen penentu penghasilan. 
 
-Menurut Jepchumba dari Microsoft [[4]](https://techcommunity.microsoft.com/t5/educator-developer-blog/getting-started-with-using-visual-machine-learning-tools-for/ba-p/3578397), *machine learning* merupakan teknik yang menggunakan matematika tingkat tinggi dan ilmu statistika untuk mengenali pola pada data yang tidak ada secara eksplisit, dan dapat memprediksi sesuai dengan hasil pola tersebut. Dengan beragamnya faktor-faktor (variabel) yang terlibat dalam proyek ini, machine learning menjadi solusi yang terbaik. Identifikasi dan prediksi faktor-faktor akan dilakukan dengan cara mengaplikasikan teknik-teknik *data analysis* seperti *Exploratory Data Analysis* (EDA)  dan menggunakan algoritma-algoritma *Machine Learning* seperti *Random Forest, K-Nearest Neighbors,* dan *Boosting*. 
+According to Jepchumba from Microsoft [[4]](https://techcommunity.microsoft.com/t5/educator-developer-blog/getting-started-with-using-visual-machine-learning-tools-for/ba-p/3578397), *machine learning* , is a technique that uses advanced mathematics and statistics to recognize patterns in data that do not exist explicitly, and can predict according to the results of these patterns. With the variety of factors (variables) involved in this project, machine learning is the best solution. Identification and prediction of factors will be done by applying data analysis techniques such as Exploratory Data Analysis (EDA) and using Machine Learning algorithms such as Random Forest, K-Nearest Neighbors, and Boosting .
 
-Proyek ini menjadi sarana kecil untuk membantu menyelesaikan masalah sulitnya mencari kerja, dengan menganalisis dinamika faktor-faktor pendapatan per tahun yang tinggi. Hasil dari proyek ini diharapkan dapat membantu Pemerintah dan individu-individu di usia produktif sebagai tambahan *insight* terkait masalah ini, dan membantu pihak-pihak tersebut untuk mengembangkan masyarakat dan diri sendiri untuk peningkatan kualitas hidup. 
+This project is a small tool to help solve the problem of difficulty in finding work, by analyzing the dynamics of high annual income factors. The results of this project are expected to help the Government and individuals in productive age as additional insight related to this problem, and help these parties to develop society and themselves to improve the quality of life.
 
 ## ***Business Understanding***
 
 
 Stakeholder dan sasaran: 
-1. Pemerintah
-Sebagai organisasi tingkat tertinggi di sebuah negara, pemerintah dapat membuat kebijakan-kebijakan dan perubahan yang baik, guna meningkatkan kualitas hidup rakyatnya. Salah satu caranya ialah membuat/memperbaiki sistem di negaranya untuk mendorong kemajuan sumber daya manusianya.
-2. Individu
-Pada tingkat individu, diharapkan hasil proyek ini dapat memberikan insight terhadap faktor-faktor penting yang dapat meningkatkan kualitas hidupnya, melalui pekerjaan dan pekerjaan dengan pendapatan per tahun yang tinggi. 
+1. Government 
+As the highest level organization in a country, the government can make good policies and changes, in order to improve the quality of life of its people. One way is to create/improve the system in the country to encourage the advancement of its human resources.
+2. Individual 
+At the individual level, it is hoped that the results of this project will provide insight into important factors that can improve the quality of life, through work and employment with high annual incomes.
 
 **Problem Statements**
-1. Dari berbagai fitur, apa yang paling berpengaruh terhadap income (pendapatan)?
-2. Dengan karakteristik tertentu, apakah income dapat diprediksi?  
-
-*income merujuk pada pendapatan per tahun.
+1. Of the various features, which has the most influence on income?
+2. With certain characteristics, can income be predicted?
+3. 
+*income refers to annual income.
 
 **Predictive Modelling Goals**
-1. Mengetahui fitur-fitur yang memiliki kaitan yang tinggi terhadap income.
-2. Dapat memprediksi income dengan akurasi di atas 90%.
+1. Knowing the features that have a high relationship to income.
+2. Able to predict income with an accuracy above 90%.
 
 **Solution Statements (Metodologi)**
-1. Target feature pada dataset ini merupakan variable boolean antara >50k dan <= 50k, sehingga kasus ini merupakan kasus prediksi Klasifikasi.
+1. The target feature in this dataset is a boolean variable between >50k and <= 50k, so this is a Classification prediction case.
 
-2. Melakukan Exploratory Data Analysis untuk mendapatkan informasi berguna dalam data dan mengetahui dinamika fitur-fitur. 
+2. Perform Exploratory Data Analysis to obtain meaningful information in the data and understand the dynamics of the features.
 
-3. Melakukan uji perbedaan teknik-teknik *missing values handling*, dan dampaknya terhadap akurasi model machine learning. 
+3. Testing the differences between missing values ​​handling techniques, and their impact on the accuracy of machine learning models.
 
-4. Membuat model machine learning yang dapat memprediksi income dengan akurasi di atas 90%
+4. Create a machine learning model that can predict income with an accuracy above 90%
 
-5. Menggunakan metrik evaluasi Accuracy, Precision, Recall, F1-Score, dan Confusion Matrix untuk mengevaluasi performa model.
+5. Using Accuracy, Precision, Recall, F1-Score, and Confusion Matrix to evaluate model performance.
 
 ## ***Data Understanding***
 
-
 Dataset: https://archive.ics.uci.edu/dataset/2/adult 
+
 ***Dataset Overview***
 
-Deskripsi variabel pada dataset adalah sebagai berikut: 
-1. age (int64) : umur sampel
-2. workclass (object) : status pekerjaan sampel
-3. fnlwgt (int64) : ID sampel
-4. education (object) : pendidikan terakhir sampel
-5. educational-num (int64) : pendidikan terakhir sampel dalam angka
-6. marital-status (object) : status pernikahan sampel
-7. occupation (object) : pekerjaan/industri pekerjaan sampel
-8. relationship (object) : status hubungan sampel 
-9. race (object) : ras sampel 
-10. gender (object) : jenis kelamin sampel 
-11. capital-gain (int64) : pemasukan kapital 
-12. capital-loss (int64) : kerugian kapital
-13. hours-per-week (int64) : jam kerja sampel dalam seminggu 
-14. native-country (object) : negara asal/buyut sampel 
-15. income (object) : pendapatan sampel 
+The description of the variables in the dataset is as follows:
 
-Deskripsi rinci dari dataset ini adalah sebagai berikut
-1. Terdapat 48.842 sampel data
-2. Terdapat dua tipe data yang berbeda, antara lain 'object' (kategorikal), dan 'int64' (numerik). 
-3. Dari 15 kolom variabel, terdapat 9 kolom kategorikal dan 6 kolom numerik.
-4. Pembagiannya adalah 14 kolom fitur dan 1 kolom target. 
-5. Pada dataset ini, missing values, dtiandai dengan tanda '?', dan berjumlah sekitar 7% dari seluruh dataset.
+1. age (int64) : sample age
+2. workclass (object) : sample job status
+3. fnlwgt (int64) : sample ID
+4. education (object) : last education sample
+5. educational-num (int64) : sample's last education in numbers
+6. marital-status (object) : sample marital status
+7. occupation (object) : sample job/industry
+8. relationship (object) : sample relationship status
+9. race (object) : sample race
+10. gender (object) : sample gender
+11. capital-gain (int64) : capital gain
+12. capital-loss (int64) : capital loss
+13. hours-per-week (int64) : sample working hours in a week
+14. native-country (object) : country of origin/grandfather of the sample
+15. income (object) : sample income
 
-**Deskripsi dari distribusi data dapat dicermati pada bagian *Univariate Analysis* dan *Multivariate Analysis* di bawah ini**. 
+Detailed description of this dataset is as follows.
+
+1. There are 48,842 data samples
+2. There are two different data types, namely 'object' (categorical), and 'int64' (numeric).
+3. Of the 15 variable columns, there are 9 categorical columns and 6 numeric columns.
+4. The division is 14 feature columns and 1 target column.
+5. In this dataset, missing values, marked with a '?', constitute approximately 7% of the entire dataset.
+
+**Description of the data distribution can be seen in the Univariate Analysis and Multivariate Analysis sections below**. 
+
 
 ***Univariate Analysis***
 ---
 
 ![Univariate Visualization](Sub1_PA/univariateWorkclass.png?raw=true "Univariate result")
 
-Gambar 1.0: Univariate analysis workclass vs income
+Figure 1.0: Univariate analysis of work class vs income
 
-Keterangan dari distribusi workclass dapat dicermati dari tabel berikut.
+Description of the workclass distribution can be seen in the following table.
 
-Tabel 1.0: Distribusi Workclass
-|   **workclass**  | **sampe count** | **percentage** |
+Table 1.0: Workclass Distribution
+|   **workclass**  | **sample count** | **percentage** |
 |:----------------:|:---------------:|:--------------:|
 | Private          |      33906      |      69.4      |
 | Self-emp-not-inc |       3862      |       7.9      |
@@ -98,18 +101,18 @@ Tabel 1.0: Distribusi Workclass
 | Without-pay      |        21       |       0.0      |
 | Never-worked     |        10       |       0.0      |
 
-Mencermati tabel 1.0, dapat dilihat bahwa kategori modus dari workclass adalah Private, dengan selisih lebih dari 60%.
+Looking at table 1.0, it can be seen that the mode category of the workclass is Private, with a difference of more than 60%.
 
 ---
 
 ![Univariate Visualization](Sub1_PA/univariateEduclass.png?raw=true "Univariate result")
 
-Gambar 1.1: Univariate analysis educationClass vs income
+Figure 1.1: Univariate analysis educationClass vs income
 
-Keterangan dari distribusi educationClass dicermati dari tabel berikut. 
+The description of the educationClass distribution can be seen in the following table.
 
-Tabel 1.1: Distribusi educationClass
-| **educationClass** | **sampe count** | **percentage** |
+Table 1.1: Distribution of educationClass
+| **educationClass** | **sample count** | **percentage** |
 |:------------------:|:---------------:|:--------------:|
 | HS-grad            |      15784      |      32.3      |
 | Some-college       |      10878      |      22.3      |
@@ -128,18 +131,18 @@ Tabel 1.1: Distribusi educationClass
 | 1st-4th            |       247       |       0.5      |
 | Preschool          |        83       |       0.2      |
 
-Pada tabel 1.1, dapat dilihat bahwa kategori modus jatuh pada HS-grad (lulusan SMA), namun distribusi terlihat lebih seimbang daripada kategori Workclass, dengan tren *Right-skewed (positive) distribution*. 
+In table 1.1, it can be seen that the mode category falls on HS-grad (high school graduate), but the distribution looks more balanced than the Workclass category, with a Right-skewed (positive) distribution trend . 
 
 ---
 
 ![Univariate Visualization](Sub1_PA/univariateStatus.png?raw=true "Univariate result")
 
-Gambar 1.2: Univariate analysis status vs income
+Figure 1.2: Univariate analysis of status vs income
 
-Keterangan dari distribusi status dapat dicermati dari tabel berikut. 
+Description of the status distribution can be seen in the following table.
 
-Tabel 1.2: Distribusi status
-|       **status**      | **sampe count** | **percentage** |
+Table 1.2: Status distribution
+|       **status**      | **sample count** | **percentage** |
 |:---------------------:|:---------------:|:--------------:|
 | Married-civ-spouse    |      22379      |      45.8      |
 | Never-married         |      16117      |      33.0      |
@@ -149,18 +152,18 @@ Tabel 1.2: Distribusi status
 | Married-spouse-absent |       628       |       1.3      |
 | Married-AF-spouse     |        37       |       0.1      |
 
-Berdasarkan tabel 1.2, mirip dengan educationClass, distribusi terlihat lebih seimbang dan tidak tinggi pada satu kategori, dengan tren *Right-skewed distribution*
+Based on table 1.2, similar to educationClass, the distribution looks more balanced and not high in one category, with a Right-skewed distribution trend.
 
 ---
 
 ![Univariate Visualization](Sub1_PA/univariateOcc.png?raw=true "Univariate result")
 
-Gambar 1.3: Univariate analysis occupation vs income
+Figure 1.3: Univariate analysis of occupation vs income
 
-Keterangan dari distribusi occupation dapat dicermati dari tabel berikut. 
+Information on occupation distribution can be seen in the following table.
 
-Tabel 1.3: Distribusi occupation
-|   **occupation**  | **sampe count** | **percentage** |
+Table 1.3: Occupation distribution
+|   **occupation**  | **sample count** | **percentage** |
 |:-----------------:|:---------------:|:--------------:|
 | Prof-specialty    |       6172      |      12.6      |
 | Craft-repair      |       6112      |      12.5      |
@@ -178,17 +181,17 @@ Tabel 1.3: Distribusi occupation
 | Priv-house-serv   |       242       |       0.5      |
 | Armed-Forces      |        15       |       0.0      |
 
-Pada tabel 1.3, distribusi semakin normal, dengan tren ringan *Right-skewed distribution*. 
+In table 1.3, the distribution is increasingly normal, with a mild Right-skewed distribution trend .
 
 ---
 
 ![Univariate Visualization](Sub1_PA/univariateRel.png?raw=true "Univariate result")
 
-Gambar 1.4: Univariate analysis relationship vs income
+Figure 1.4: Univariate analysis relationship vs income
 
-Keterangan dari distribusi relationship dapat dicermati dari tabel berikut. 
+Description of the relationship distribution can be seen in the following table.
 
-Tabel 1.4: Distribusi relationship
+Table 1.4: Distribution of relationships
 | **relationship** | **sample count** | **percentage** |
 |:----------------:|:----------------:|:--------------:|
 | Husband          |       19716      |      40.4      |
@@ -198,18 +201,18 @@ Tabel 1.4: Distribusi relationship
 | Wife             |       2331       |       4.8      |
 | Other-relative   |       1506       |       3.1      |
 
-Kemudian pada tabel 1.4, dapat dicermati bahwa tren dataset cukup seimbang, dengan nilai tertinggi Husband. Hasil ini dapat menyiratkan bahwa distribusi Gender akan lebih tinggi pada pria daripada wanita. Hal ini akan dikonfirmasikan pada Univariate Analysis pada fitur Gender. 
+Then in table 1.4, it can be seen that the dataset trend is quite balanced, with the highest value of Husband. This result can imply that the distribution of Gender will be higher in men than women. This will be confirmed in the Univariate Analysis on the Gender feature.
 
 
 ---
 
 ![Univariate Visualization](Sub1_PA/univariateRace.png?raw=true "Univariate result")
 
-Gambar 1.5: Univariate analysis race vs income
+Figure 1.5: Univariate analysis of race vs income
 
-Keterangan dari distribusi race dapat dicermati dari tabel berikut. 
+Description of the race distribution can be seen in the following table.
 
-Tabel 1.5: Distribusi race
+Table 1.5: Race distribution
 |      **race**      | **sample count** | **percentage** |
 |:------------------:|:----------------:|:--------------:|
 | White              |       41762      |      85.5      |
@@ -218,36 +221,36 @@ Tabel 1.5: Distribusi race
 | Amer-Indian-Eskimo |        470       |       1.0      |
 | Other              |        406       |       0.8      |
 
-Dari tabel 1.5, dapat terlihat bahwa modus yang sangat jelas jatuh pada kategori White, dengan perbedaan hingga 75,9%. 
+From table 1.5, it can be seen that the mode clearly falls in the White category, with a difference of up to 75.9%.
 
 ---
 
 ![Univariate Visualization](Sub1_PA/univariateGender.png?raw=true "Univariate result")
 
-Gambar 1.6: Univariate analysis gender vs income
+Figure 1.6: Univariate analysis of gender vs income
 
-Keterangan dari distribusi gender dapat dicermati dari tabel berikut.
+Information on gender distribution can be seen in the following table.
 
-Tabel 1.6: Distribusi gender
+Table 1.6: Gender distribution
 | **gender** | **sample count** | **percentage** |
 |:----------:|:----------------:|:--------------:|
 | Male       |       32650      |      66.8      |
 | Female     |       16192      |      33.2      |
 
-Hasil dari tabel 1.6 membenarkan teori dari tabel 1.4, dimana distribusi Male (pria) lebih besar dari Female (wanita). 
+The results of table 1.6 confirm the theory of table 1.4, where the distribution of Male is greater than Female.
 
 
 ---
 
 ![Univariate Visualization](Sub1_PA/univariateNative.png?raw=true "Univariate result")
 
-Gambar 1.7: Univariate analysis native vs income
+Figure 1.7: Univariate analysis native vs income
 
-Keterangan dari distribusi native dapat dicermati dari tabel berikut.
+Description of the native distribution can be seen in the following table.
 
-*nilai yang ditampilkan hanya 15 teratas, karena unique value yang terlalu banyak.
+*only the top 15 values ​​are displayed, due to too many unique values.
 
-Tabel 1.7: Distribusi native
+Table 1.7: Native distribution
 |  **native** | **sample count** | **percentage** |
 |:-----------:|:----------------:|:--------------:|
 | USA         |       43832      |      89.7      |
@@ -266,293 +269,291 @@ Tabel 1.7: Distribusi native
 | Jamaica     |        106       |       0.2      |
 | Italy       |        105       |       0.2      |
 
-Pada tabel 1.7 dapat dicermati bahwa modus jatuh pada kategori USA, dengan perbedaan persentase hingga 87,8% dengan kategori berikutnya. 
-
+In table 1.7 it can be seen that the mode falls in the USA category, with a percentage difference of up to 87.8% with the next category.
 
 ---
 
 ![Univariate Visualization](Sub1_PA/univariateNum.png?raw=true "Univariate result")
-Gambar 1.8: Univariate analysis distribusi numerical features
+Figure 1.8: Univariate analysis of numerical features distribution
 
-Pada gambar 1.8, dapat dilihat bahwa distribusi numerikal mayoritas memiliki nilai modus dengan perbedaan yang sangat tinggi dibandingkan dengan nilai-nilai lainnya. 
+In Figure 1.8, it can be seen that the majority of numerical distributions have mode values ​​with very high differences compared to the other values.
 
 ---
 
-***Analisis dan interpretasi hasil Univariate Analysis:***
-1. *Missing values* ditandai dengan '?'.
-2. Mayoritas dari distribusi variabel sangat berat kepada modus, dengan perbedaan persentase yang sangat besar. Hal ini menyiratkan bahwa dataset ini dapat diatasi *missing values*-nya dengan metode statistika, seperti *Mode Imputation*. 
+***Analysis and interpretation of Univariate Analysis results:***
+1. Missing values ​​are marked with '?'.
+The majority of the variable distributions are heavily biased towards the mode, with very large percentage differences. This implies that this dataset can be addressed for missing values ​​using statistical methods, such as Mode Imputation .
 
 ***Multivariate Analysis***
 ---
 
 ![Multivariate Visualization](Sub1_PA/workclass1.png?raw=true "Multivariate result")
-Gambar 2.0: Multivariate analysis workclass vs income
+Figure 2.0: Multivariate analysis of work class vs income
 
-Pada workclass, dapat dilihat bahwa semua workclass memiliki income, kecuali tentunya never-worked. Rata-rata yang bekerja pada pemerintah (-gov) memiliki income yang lebih tinggi dibandingkan dengan workclass lain, namun self-emp-inc memiliki pendapatan paling tinggi.
+In workclass, it can be seen that all workclasses have income, except of course never-worked. On average, those who work for the government (-gov) have a higher income compared to other workclasses, but self-emp-inc has the highest income.
 
 ---
 
 ![Multivariate Visualization](Sub1_PA/educationclass2.png?raw=true "Multivariate result")
-Gambar 2.1: Multivariate analysis educationClass vs income
+Figure 2.1: Multivariate analysis educationClass vs income
 
-Pada educationClass, dapat dilihat dengan jelas bahwa terdapat kesenjangan yang sangat tinggi mulai dari tingkat pendidikan S1 (bachelors), dan lebih tinggi lagi semakin tinggi gelar yang dimiliki (masters, doctorate, prof-school).
+On educationClass, it can be clearly seen that there is a very large gap starting from the undergraduate level (bachelors), and even higher the higher the degree held (masters, doctorate, prof-school).
 
 ---
 
 ![Multivariate Visualization](Sub1_PA/multivariateVis.png?raw=true "Multivariate result")
-Gambar 2.2: Multivariate analysis status vs income
+Figure 2.2: Multivariate analysis of status vs income
 
-Pada status pernikahan, dapat dilihat pula tren bahwa data dengan status pernikahan stabil memiliki pendapatan yang lebih tinggi dibandingkan mereka yang tidak menikah, bercerai, berpisah, atau cerai mati.
+In terms of marital status, a trend can also be seen that data with stable marital status have higher incomes compared to those who are unmarried, divorced, separated, or divorced by death.
 
 ---
 
 ![Multivariate Visualization](Sub1_PA/occ4.png?raw=true "Multivariate result")
-Gambar 2.3: Multivariate analysis occupation vs income 
+Figure 2.3: Multivariate analysis of occupation vs income
 
-Pada occupation, tiga sektor kerja paling tinggi pendapatannya adalah Specialty (spesialis), manajerial (eksekutif), dan protective service (jasa keamanan). Selain itu, tidak terdapat tren yang secara jelas dapat di diamati.
+In occupation, the three highest-paying sectors are Specialty, Managerial, and Protective Service. In addition, there is no clear trend that can be observed.
 
 ---
 
 ![Multivariate Visualization](Sub1_PA/relationship5.png?raw=true "Multivariate result")
-Gambar 2.4: Multivariate analysis relationship vs income
+Figure 2.4: Multivariate analysis of relationship vs income
 
-Pada relationship, dapat dilihat bahwa menguatkan hasil pengamatan status pernikahan, yang berstatus sebagai husband (suami) dan istri (istri) memiliki pendapatan yang tertinggi dari data-data lain.
-
+In relationships, it can be seen that it strengthens the results of observations of marital status, those with the status of husband and wife have the highest income from other data.
 ---
 
 ![Multivariate Visualization](Sub1_PA/race6.png?raw=true "Multivariate result")
-Gambar 2.5: Multivariate analysis race vs income
+Figure 2.5: Multivariate analysis of race vs income
 
-Pada race, dua ras dengan pendapatan tertinggi adalah White (putih) dan Asian-Pac (asia-pasifik)
+In racing, the two races with the highest income are White (white) and Asian-Pac (Asia-Pacific)
 
 ---
 
 ![Multivariate Visualization](Sub1_PA/gender7.png?raw=true "Multivariate result")
-Gambar 2.6: Multivariate analysis gender vs income
+Figure 2.6: Multivariate analysis of gender vs income
 
-Pada gender, dapat dilihat bahwa pendapatan laki-laki lebih tinggi dari pendapatan perempuan.
+In terms of gender, it can be seen that men's income is higher than women's income.
 
 ---
 
 ![Multivariate Visualization](Sub1_PA/native8.png?raw=true "Multivariate result")
-Gambar 2.7: Multivariate analysis native vs income
+Figure 2.7: Multivariate analysis of native vs income
 
-pada native (negara asal/buyut), dapat dilihat bahwa tren pendapatan kurang dapat diamati, artinya negara asal/buyut bukan faktor yang kuat yang dapat memengaruhi pendapatan.
+In native (country of origin/grandfather), it can be seen that the income trend is less observable, meaning that the country of origin/grandfather is not a strong factor that can influence income.
 
 ---
 
 ![Multivariate Visualization](Sub1_PA/multivariateVisNum.png?raw=true "Multivariate result")
-Gambar 2.8: Multivariate analysis numerical-values vs income
+Figure 2.8: Multivariate analysis numerical-values ​​vs income
 
-Pada visualisasi fitur numerik terhadap income, dapat dilihat bahwa kurang terlihat pola dalam pengaruh fitur numerik. Hal ini menyiratkan bahwa nilai korelasi antar fitur numerik dan income tidak terlalu signifikan. 
+In the visualization of numeric features against income, it can be seen that there is less visible pattern in the influence of numeric features. This implies that the correlation value between numeric features and income is not very significant.
 
 ---
 
-***Analisis dan interpretasi hasil Multivariate Analysis:***
+***Analysis and interpretation of Multivariate Analysis results:***
 
-1. Hasil dari Multivariate Analysis menunjukkan bahwa tren yang paling jelas, ada pada educationClass, status, dan relationship. 
+1. The results of the Multivariate Analysis show that the clearest trends are in educationClass, status, and relationship.
 
-2. Pada gambar 2.1 yang memvisualisasikan analisis educationClass terhadap income, dapat dilihat bahwa terjadi lompatan yang tinggi dimulai dari pendidikan S1, dan income semaking tinggi seiring dengan semakin tingginya derajat pendidikan. 
+2. In Figure 2.1, which visualizes the educationClass analysis of income, it can be seen that there is a high jump starting from undergraduate education, and income increases as the level of education increases.
 
-3. Pada gambar 2.2 dan 2.4, status dan relationship, terlihat bahwa sampel yang berada dalam hubungan pernikahan yang sehat akan memiliki income yang lebih tinggi dibandingkan status yang lain, dan ini dikuatkan pada analisis terhadap relationship.
+3. In Figures 2.2 and 2.4, status and relationship, it can be seen that samples in healthy marital relationships will have higher incomes compared to other statuses, and this is confirmed in the analysis of relationships.
 
-![Correlation matrix](Sub1_PA/corrMat.png?raw=true "Correlation Matrix")
-Gambar 3.0: Correlation matrix variabel-variabel
+![Correlation matrix](sub1_pa/corrMat.png?raw=true "Correlation Matrix")
+Figure 3.0: Correlation matrix of variables
 
-Hasil dari correlation matrix di atas menunjukkan bahwa fitur yang kuat seperti educationClass tidak terlalu jauh nilai korelasinya dengan nilai rendah, seperti capital-gain. Maka dari itu, tidak akan dilakukan drop kolom lagi. 
+The results of the correlation matrix above show that strong features such as educationClass are not too far from the correlation value with low values, such as capital-gain. Therefore, no more column drops will be performed.
 
 
 ## ***Data Preparation***
 
-Secara berurutan, proses Data Preparation yang akan dilakukan adalah
+Sequentially, the data preparation processes that will be carried out are as follows:
 1. Features Encoding
-    - Features Encoding adalah pengubahan fitur-fitur kategorikal menjadi representasi numerik. Alasan diperlukan Features Encoding adalah sebagai berikut: 
-        - Meskipun terdapat model yang dapat mengolah data kategorikal, mayoritas dari model yang ada tetap membutuhkan input dalam bentuk numerik. 
-        - Lanjutan dari poin pertama, terkadang terdapat hubungan tingkatan (ordinalitas) yang ada dalam dataset. Merepresentasikan data kategorikal menjadi numerik dapat membantu mengawetkan hubungan ini, sehingga dimengerti secara implisit oleh model.
-        - Model machine learning adalah model berbasis matematika dan statistika, sehingga pengolahan dalam bentuk numerik akan mempercepat proses training dan testing. 
-    - Teknik-teknik Features Encoding yang akan dilakukan pada proyek ini adalah: 
+    - Features Encoding is the conversion of categorical features into numeric representation. The reasons for Features Encoding are as follows:
+        - Although there are models that can process categorical data, the majority of existing models still require input in numeric form.
+        - Continuing from the first point, sometimes there are ordinal relationships in the dataset. Representing categorical data as numeric can help preserve these relationships, so that they are implicitly understood by the model.
+        - Machine learning models are models based on mathematics and statistics, so processing them in numerical form will speed up the training and testing process.
+    - The Features Encoding techniques that will be used in this project are:
         1. Ordinal Encoding
         2. One Hot Encoding
         
 2. Train Test Split
-    - Train Test Split adalah prosedur standar dalam melakukan Machine Learning, dimana dataset akan dibagi menjadi data latih (train) dan test. Hal ini dilakukan untuk memastikan bahwa model yang telah dilatih dapat menyelesaikan masalah pada data asli yang belum pernah ditemuinya. 
+    - Train Test Split is a standard procedure in Machine Learning, where the dataset will be divided into training data (train) and test. This is done to ensure that the trained model can solve problems on real data that it has never encountered.
 
 3. KNN Imputation
-    - KNN Imputation adalah salah satu proses yang akan diuji di proyek ini, dimana missing values akan diisi dengan melihat kemiripan fitur-fitur lain pada baris yang sama, dan menginput nilai baru. KNN Imputation dapat menyebabkan Data Leakage, sehingga perlu dianggap sebagai proses transformasi, dari pada pre-processing. Dikarenakan itulah KNN Imputation dilakukan setelah proses Train Test Split. 
+    - KNN Imputation is one of the processes that will be tested in this project, where missing values ​​will be filled by looking at the similarity of other features in the same row, and inputting new values. KNN Imputation can cause Data Leakage, so it needs to be considered as a transformation process, rather than pre-processing. That is why KNN Imputation is done after the Train Test Split process.
     
 4. Standardization
-    - Standardization juga merupakan prosedur standar dalam melakukan Machine Learning. Menurut Google Machine Learning Developers [[5]](https://developers.google.com/machine-learning/data-prep/transform/normalization#:~:text=The%20goal%20of%20normalization%20is,training%20stability%20of%20the%20model), standarisasi adalah metode untuk mengubah nilai-nilai numerik pada data ke skala yang sangat mirip, untuk meningkatkan performa dan stabilitas pada model saat train dan test.
+    - Standardization is also a standard procedure in performing Machine Learning. According to Google Machine Learning Developers[[5]](https://developers.google.com/machine-learning/data-prep/transform/normalization#:~:text=The%20goal%20of%20normalization%20is,training%20stability%20of%20the%20model), standardization is a method for changing the numerical values ​​in data to a very similar scale, to improve the performance and stability of the model during train and test.
 
-Setelah penjelasan terkait proyek di atas, berikut adalah alur yang dilewati pada tahap Data Preparation ini. 
+After the explanation regarding the project above, here is the flow that of the Data Preparation stage.
+
 1. Features Encoding. 
-Input pada tahap ini adalah tiga DataFrame, dengan keterangan: 
-    - Satu DataFrame asli, masih terdapat missing values, dan  
-    - Dua DataFrame yang sama persis dimana sudah dilakukan proses Drop.
-Pada DataFrame asli dan satu DataFrame Drop, dilakukan Ordinal Encoding, dan One Hot Encoding pada satu DataFrame yang tersisa. Sehingga, output dari tahap ini adalah tiga DataFrame, 
+- The input at this stage is three DataFrames, with the following descriptions: 
+    - One original DataFrame, there are still missing values, and
+    - Two identical DataFrames where Dropping has been performed. On the original DataFrame and one Dropped DataFrame, Ordinal Encoding is performed, and One Hot Encoding on the remaining DataFrame. Thus, the output of this stage is three DataFrames,
         - Dropped One Hot Encoded, 
         - Dropped Ordinal Encoded, dan 
         - Data Asli Ordinal Encoded. 
     
 2. Train Test Split
-Train Test Split dilakukan ke setiap DataFrame, memisahkan mereka menjadi x dan y. 
+- Train Test Split is performed on each DataFrame, separating them into x and y. 
 
 3. KNN Imputation
-KNN Imputation hanya dilakukan ke DataFrame Data Asli Ordinal Encoded. KNN Imputation dilakukan setelah Train Test Split untuk mencegah terjadinya Data Leakage. 
+- KNN Imputation is only performed on the Original Ordinal Encoded DataFrame. KNN Imputation is performed after Train Test Split to prevent Data Leakage. 
 
 4. Standarisasi
-Pada tahap ini standarisasi dilakukan ke semua x_train dan x_test pada semua DataFrame, menyiapkan data tersebut untuk train dan test. 
+- At this stage standardization is performed on all x_train and x_test on all DataFrames, preparing the data for train and test.
 
 ## ***Model Development***
 
-Proses Model Development yang akan Penulis lakukan dapat dibagi menjadi beberapa tahap: 
-1. DataFrame initialization: menyiapkan dataframe untuk menyimpan hasil training model. 
+The Model Development process that the Author will carry out can be divided into several stages: 
+1. DataFrame initialization: prepare dataframes to store the model training results.
 
-2. Pipeline Prep: menyiapkan pipeline untuk mempermudah proses training.
+2. Pipeline Prep: prepare pipelines to simplify model training.
 
-3. Model Training: melatih model. 
+3. Model Training: train the model. 
 
 4. Visualization
 
-Pembuatan model dan training dilakukan di saat yang hampir bersamaan, dengan menggunakan metode Pipeline. 
+Model building and training will be done simultaneously using pipelines. 
 
 ***Model Explanation, pros and cons***
 
 ---
 
-Pada proyek ini, Penulis menggunakan empat algoritma, antara lain Random Forest, K-Nearest Neighbor, XGBoost, dan AdaBoost. 
+In this project, the author uses four algorithms, including Random Forest, K-Nearest Neighbor, XGBoost, and AdaBoostt. 
 
 1.   **Random Forest**
-- Random Forest adalah Supervised Learning Based Algorithm, dan merupakan implementasi dari ensemble learning. Model Ensemble sendiri adalah sekelompok model yang bekerja sama untuk meningkatkan performa prediksi. Random Forest merupakan ensemble (kumpulan) dari banyak model *decision tree*, yang digabungkan dengan teknik *Bagging*, dimana dari masing-masing decision tree akan menghasilkan sebuah prediksi, *Bagging* pada kasus klasifikasi akan mengambil prediksi terbanyak pada seluruh pohon sebagai prediksi akhir. Hal ini sangat cocok untuk proyek ini karena sifat ini membuat Random Forest tidak rentan terhadap bias. 
+- Random Forest is a Supervised Learning Based Algorithm, and is an implementation of ensemble learning. The Ensemble model itself is a group of models that work together to improve prediction performance. Random Forest is an ensemble (collection) of many decision tree models , combined with the Bagging technique , where each decision tree will produce a prediction, Bagging in the case of classification will take the most predictions on the entire tree as the final prediction. This is very suitable for this project because this property makes Random Forest not susceptible to bias. 
 
-- Dalam proyek ini, parameter untuk algoritma Random Forest yang digunakan adalah: 
+- In this project, the parameters for the Random Forest algorithm used are: 
     - n_estimator = 50
-    n_estimator merupakan parameter yang menentukan jumlah pohon (decision tree) yang akan digunakan pada algortima Random Forest. Penulis menggunakan 50 untuk percobaan dan akurasi yang didapatkan pun sudah cukup baik. Karena akurasi dari algoritma Random Forest bukan tujuan prioritas dari proyek, 50 pohon dirasa cukup.
+      - n_estimator is a parameter that determines the number of trees (decision trees) to be used in the Random Forest algorithm. The author used 50 for the experiment and the accuracy obtained was quite good. Since the accuracy of the Random Forest algorithm is not a priority goal of the project, 50 trees are considered sufficient
     - max_depth = 16
-    max_depth merupakan parameter yang menentukan kedalaman pohon, lebih tepatnya seberapa banyak pohon dapat membelah untuk melakukan komputasi/pengamatan. Sama seperti parameter pertama, akurasi sudah baik, sehingga max_depth = 16 dirasa sudah cukup. 
+      - max_depth is a parameter that determines the depth of the tree, more precisely how much the tree can be divided to perform computation/observation. Similar to the first parameter, the accuracy is already good, so max_depth = 16 is considered sufficient. 
     - random_state = 55
-    random_state merupakan parameter untuk mengatur generator random untuk memastikan setiap jalannya proses training/testing konsisten. 
+      -  random_state is a parameter to set the random generator to ensure that every training/testing process is consistent. 
     - n_jobs = -1
-    n_jobs merupakan parameter yang digunakan untuk mengatur berapa jumlah pekerjaan yang berjalan secara paralel. n_jobs = -1 berarti semua proses berjalan secara paralel. 
+      - n_jobs is a parameter used to set the number of jobs running in parallel. n_jobs = -1 means all processes run in parallel.
     
-- Dari penjelasan singkat terkait algoritma Random Forest di atas, beberapa kelebihan dan kekurangannya adalah sebagai berikut: 
+- From the brief explanation regarding the Random Forest algorithm above, some of its advantages and disadvantages are as follows: 
 
-    - Kelebihan: 
-    1. Dapat digunakan untuk klasifikasi maupun regresi.
-    2. Dapat digunakan pada data kategorikal maupun numerikal. Dapat bekerja tanpa scaling dan transformation sekalipun. 
-    3. Dapat melakukan feature selection secara implisit, dan tahan terhadap outliers. 
-    4. Dapat bekerja pada problem linier maupun non-linier, tahan pada bias, dan akurat. 
+    - Pros: 
+    1. Can be used for both classification and regression.
+    2. Can be used on categorical and numeric data. 
+    3. Can work without scaling and transformation.
+    4. Can perform feature selection implicitly, and is robust to outliers
+    5. Can work on both linear and non-linear problems, is robust to bias, and is accurate.
      
-    - Kekurangan: 
-    1. Mahal secara komputasi, terutama pada dataset besar.
-    2. Tidak fleksibel, tidak terlalu banyak yang dapat diatur sendiri. (Kurang efektif untuk hyperparameter tuning) 
+    - Cons: 
+    1. Computationally expensive, especially on large datasets.
+    2. Not flexible, not much to be adjusted (less effective for tuning)
 
 - **K-Nearest Neighbor**
-KNN bekerja dengan menggunakan kesamaan fitur untuk memprediksi nilai dari setiap data yang baru. Secara matetmatis, algortima KNN menghitung jarak (Euclidean) antara setiap poin data dan memilih klasifikasi berdasarkan mayoritas tetangga terdekat. Jika dilihat dari kompleksitas alrgortima, KNN dapat dikategorikan dalam algoritma yang lebih sederhana. KNN menjadi algoritma yang sering digunakan, termasuk pada proyek ini, karena sifatnya yang sederhana, dan tidak memiliki asumsi. Namun perlu diperhatikan pada curse of Dimensionality, yaitu tidak terlalu efektif pada dataset dengan fitur yang sangat banyak. 
+  - KNN works by using feature similarities to predict the value of each new data. Mathematically, the KNN algorithm calculates the (Euclidean) distance between each data point and chooses a classification based on the majority of nearest neighbors. When viewed from the complexity of the algorithm, KNN can be categorized as a simpler algorithm. KNN is a frequently used algorithm, including in this project, because of its simplicity and no assumptions. However, it should be noted that the curse of Dimensionality is not very effective on datasets with very many features.
 
-- Dalam proyek ini, parameter yang digunakan untuk algoritma KNN adalah: 
+- In this project, the parameters used by the KNN model are: 
     - n_neighbors = 10
-    n_neighbors adalah parameter untuk mengatur berapa jumlah tetangga yang akan dipertimbangkan untuk proses penghitungan jarak Euclidean. Penulis memilih 10 tetangga, dikarenakan terdapat beberapa fitur yang sangat lemah korelasinya, sehingga diharapkan bahwa fitur lemah tersebut tidak diprioritaskan dalam proses training. 
+      - n_neighbors is a parameter to set how many neighbors will be considered for the Euclidean distance calculation process. The author chose 10 neighbors, because there are several features that have very weak correlations, so it is expected that these weak features are not prioritized in the training process.
 
-- Dari penjelasan singkat terkait algoritma KNN di atas, beberapa kelebihan dan kekurangannya adalah sebagai berikut: 
+- From the brief explanation regarding the KNN algorithm above, some of its advantages and disadvantages are as follows: 
     
-    - Kelebihan: 
-    1. Sederhana, intuitif, dan mudah digunakan. 
-    2. Sangat efektif pada problem multi-class.
-    3. Mudah dituning karena jarak dapat diatur antara Euclidean, Hamming, Manhattan, Minkowski, dst. 
-    4. Tidak ada asumsi. 
-    
-    - Kekurangan: 
-    1. Curse of Dimensionality, lemah terhadap dataset dengan dimensi besar. 
-    2. KNN bukan algoritma tercepat. 
-    3. Scaling dan Transformasi wajib dilakukan. 
-    4. Lemah terhadap outliers, missing values, dan imbalanced dataset. 
+    - Pros: 
+    1. Simple, intuitive and easy to use.
+    2. Very effective on multi-class problems.
+    3. Easy to tune because the distance can be adjusted between Euclidean, Hamming, Manhattan, Minkowski, etc
+    4. No assumptions.
+
+    - Lack:
+    1. Curse of Dimensionality, weak against datasets with large dimensions.
+    2. KNN is not the fastest algorithm.
+    3. Scaling and Transformation are mandatory.
+    4. Weak against outliers, missing values, and imbalanced datasets. 
 
 - **XGBoost**
-eXtreme Gradient Boosting (XGBoost) adalah model berbasis ensemble learning dan boosting, dan merupakan turunan dari framework Gradient Boosting Decision Tree. Boosting sendiri merupakan proses yang membuat dan menggabungkan weak learner models secara iteratif hingga menghasilkan suatu strong learner model. Cara boosting bekerja adalah membangun model secara berurutan dengan fokus pada data yang salah sebelumnya. Dalam kasus XGBoost, atau Gradient Boosting pada umumnya, iterasi pembuatan dan penggabungan model dilakukan berdasarkan gradien error (gradient of error) atau yang sering disebut Gradient Loss Function. Secara fundametnal, perbedaan XGBoost dan AdaBoost adalah loss function yang digunakan. 
+  - eXtreme Gradient Boosting (XGBoost) is an ensemble learning and boosting-based model, and is derived from the Gradient Boosting Decision Tree framework. Boosting itself is a process that creates and combines weak learner models iteratively to produce a strong learner model. The way boosting works is by building models sequentially with a focus on previously incorrect data. In the case of XGBoost, or Gradient Boosting in general, the iteration of model creation and combination is done based on the gradient of error or what is often called the Gradient Loss Function. Fundamentally, the difference between XGBoost and AdaBoost is the loss function used.
 
-- Dari penjelasan singkat terkait algoritma XGBoost di atas, beberapa kelebihan dan kekurangannya adalah sebagai berikut: 
-    - Kelebihan:
-    1. Cepat. 
-    2. Sangat tahan terhadap outliers
-    3. Fleksibel, mampu beradaptasi pada variasi data yang tinggi. 
-    4. Built-in regularisasi.
-    5. Akurasi tinggi. 
-    - Kekurangan: 
-    1. Mahal secara komputasi. 
-    2. Kompleks. 
-    3. Mirip seperti Random Forest, XGBoost kurang bisa dilakukan hyperparameter tuning. 
+- From the brief explanation regarding the XGBoost algorithm above, some of its advantages and disadvantages are as follows:
+  
+    - Pros:
+    1. Fast.
+    2. Very resistant to outliers
+    3. Flexible, able to adapt to high data variations.
+    4. Built-in regularization.
+    5. High accuracy.
+    - Cons: 
+    1. Computationally expensive.
+    2. Complex.
+    3. Similar to Random Forest, XGBoost is less amenable to hyperparameter tuning.
 
 - **AdaBoost**
-Adaptive Boosting (AdaBoost) adalah Supervised Learning Based Algorithm yang mengimplementasikan ensemble learning dan boosting. Mirip dengan XGBoost, AdaBoost bekerja dengan membuat sejumlah weak learners berbasis decision tree, kemudian membuat model-model berikutnya dengan jawaban salah dari model sebelumnya. Berbeda dengan XGBoost, AdaBoost menggunakan Exponential Loss Function. 
+  - Adaptive Boosting (AdaBoost) is a Supervised Learning Based Algorithm that implements ensemble learning and boosting. Similar to XGBoost, AdaBoost works by creating a number of weak learners based on decision trees, then creating subsequent models with the wrong answers from the previous model. Unlike XGBoost, AdaBoost uses Exponential Loss Function.
 
-- Dalam proyek ini, parameter untuk algoritma AdaBoost yang digunakan adalah: 
+- In this project, the parameters for the AdaBoost algorithm used are: 
     - n_estimators = 50
-    Mirip dengan algoritma Random Forest, AdaBoost menerima parameter n_estimators untuk mengatur jumlah decision trees yang akan dihasilkan. Penulis menggunakan 50 sebagai percobaan, dan hasil yang didapatkan sudah cukup baik.
+      - Similar to the Random Forest algorithm, AdaBoost accepts a n_estimators parameter to set the number of decision trees to be generated. The author used 50 as an experiment, and the results obtained were sufficient.
     - random_state = 123
-    random_state merupakan parameter untuk mengatur generator random untuk memastikan setiap jalannya proses training/testing konsisten. 
+      - random_state is a parameter to set the random generator to ensure that every training/testing process is consistent. 
 
-- Dari penjelasan singkat terkait algoritma AdaBoost di atas, beberapa kelebihan dan kekurangannya adalah sebagai berikut: 
-    - Kelebihan: 
-    1. Potensi tinggi, meningkatkan performa model secara signifikan.
-    2. Murah secara komputasi. 
-    3. Fleksibel, dapat digunakan di berbagai kasus. 
-    3. Dapat digunakan bersama model lain. 
-    - Kekurangan: 
-    1. Varians tinggi. 
-    2. Kurang efektif dalam problem linier.
-    3. Lebih rentan terhadap outliers.
+- From the brief explanation regarding the AdaBoost algorithm above, some of its advantages and disadvantages are as follows: 
+    - Pros: 
+    1. High potential, significantly improving model performance.
+    2. Computationally inexpensive.
+    3. Flexible, can be used in various cases.
+    4. Can be used with other models. 
+    - Cons: 
+    1. High variance.
+    2. Less effective in linear problems.
+    3. More susceptible to outliers.
 
 
 ## ***Evaluation***
 
 
-Dalam proyek ini, beberapa metrik evaluasi yang digunakan adalah sebagai berikut. 
-Sebelum memasuki penjelasan metrik lebih lanjut, perlu dipahami bahwa: 
+In this project, some evaluation metrics used are as follows. Before going into further explanation of the metrics, it is necessary to understand that:: 
 
-- TN = True Negative, data negatif yang diprediksi negatif (benar)
-- TP = True Positive, data positif yang diprediksi negatif (benar)
-- FN = False Negative, data negatif yang diprediksi positif (salah) 
-- FP = False positive, data positif yang diprediksi negatif (salah)
-
+- TN = True Negative, negative data that is predicted to be negative (true)
+- TP = True Positive, positive data that is predicted to be negative (true)
+- FN = False Negative, negative data that is predicted positive (wrong)
+- FP = False positive, positive data that is predicted to be negative (wrong)
 
 
-Pertama, Accuracy, yang dapat dihitung dengan rumus:
+First, Accuracy, which can be calculated using the formula:
+
 $$Accuracy = \frac{TN + TP}{TN + FP + TP + FN}$$
 
-Accuracy merepresentasikan angka data yang benar di prediksi dibagi total jumlah data. Idealnya, akurasi memberikan ide seberapa baik model dapat memprediksi data, namun kekurangan dari metrik ini adalah kurang adilnya metrik jika dataset yang digunakan *unbalanced*.
+Accuracy represents the number of correctly predicted data divided by the total number of data. Ideally, accuracy gives an idea of ​​how well a model can predict data, but the downside of this metric is that it is less fair if the dataset used is unbalanced .
 
 
 
-Berikutnya adalah precision, yang dapat dihitung dengan rumus:
+Next is precision, which can be calculated using the formula:
 
 $$Precision = \frac{TP}{FP + TP}$$
 
-Precision adalah rasio prediksi benar positif (TP) dari total prediksi positif. Semakin tinggi presisi, artinya semakin sedikit jumlah prediksi positif salah (FP).
+Precision is the ratio of true positive predictions (TP) to total positive predictions. The higher the precision, the fewer the number of false positive predictions (FP).
 
 
 
-Kemudian terdapat metrik Recall, seperti berikut.
+Then there is the Recall metric, as follows.
 
 $$Recall = \frac{TP}{TP + FN}$$
 
-Recall menghitung nilai dari betulnya prediksi positif dari jumlah aktual positif. Semakin tinggi nilai recall berarti semakin sedikit False Negatives (FN).
+Recall measures the value of the correct positive predictions from the actual number of positives. The higher the recall value, the fewer the False Negatives (FN).
 
 
 
-Setelah menghitung metrik Accuracy, Precision, dan Recall, kita bisa mencari nilai F1 Score dengan rumus berikut.
+After calculating the Accuracy, Precision, and Recall metrics, we can find the F1 Score value using the following formula.
 
 $$F1 Score = 2* \frac{Precision * Recall}{Precision + Recall}$$
 
-F1 Score adalah sebuah nilai harmonis yang menggunkan presisi dan Recall, artinya  nilai F1 Score yang tinggi memiliki Precision dan Recall yang tinggi. 
-
+F1 Score is a harmonic value that uses precision and Recall, meaning that a high F1 Score value has high Precision and Recall.
 **Model Training Results**
 
 ---
 - Visualization
-![Train Acc](Sub1_PA/trainAcc.png?raw=true "Train Accuracies Result")
-Gambar 4.0: Hasil model training
+![Train Acc](sub1_pa/trainAcc.png?raw=true "Train Accuracies Result")
+Figure 4.0: Model training results
 
-Table 2.0 Evaluasi training Accuracy, Precision, Recall, dan F1 Score data Dropped One Hot Encoded
+Table 2.0 Evaluation of training Accuracy, Precision, Recall, and F1 Score data Dropped One Hot Encoded
 | Model        | Accuracy | Precision | Recall   | F1-Score |
 |--------------|----------|-----------|----------|----------|
 |      KNN     | 0.864862 |  0.794974 | 0.612125 | 0.691669 |
@@ -560,7 +561,7 @@ Table 2.0 Evaluasi training Accuracy, Precision, Recall, dan F1 Score data Dropp
 |    XGBoost   |  0.88582 |  0.821095 | 0.689026 | 0.749285 |
 |   AdaBoost   | 0.858154 |  0.770313 | 0.608653 | 0.680007 |
 
-Table 2.1 Evaluasi training Accuracy, Precision, Recall, dan F1 Score data Dropped Ordinal Encoded
+Table 2.1 Evaluation of training Accuracy, Precision, Recall, and F1 Score Dropped Ordinal Encoded data
  | Model        | Accuracy | Precision | Recall   | F1-Score |
 |--------------|----------|-----------|----------|----------|
 |      KNN     | 0.860758 |  0.787511 | 0.599424 | 0.680714 |
@@ -568,7 +569,7 @@ Table 2.1 Evaluasi training Accuracy, Precision, Recall, dan F1 Score data Dropp
 |    XGBoost   | 0.887442 |    0.8215 | 0.696864 | 0.754067 |
 |   AdaBoost   | 0.855402 |  0.767718 | 0.596547 | 0.671394 |
 
-Table 2.2 Evaluasi training Accuracy, Precision, Recall, dan F1 Score data KNN Imputed Ordinal Encoded
+Table 2.2 Evaluation of training Accuracy, Precision, Recall, and F1 Score of KNN data Imputed Ordinal Encoded
 | Model        | Accuracy | Precision | Recall   | F1-Score |
 |--------------|----------|-----------|----------|----------|
 |      KNN     |  0.86414 |  0.787736 | 0.589262 | 0.674195 |
@@ -576,33 +577,31 @@ Table 2.2 Evaluasi training Accuracy, Precision, Recall, dan F1 Score data KNN I
 |    XGBoost   | 0.891053 |   0.82002 | 0.696071 | 0.752979 |
 |   AdaBoost   | 0.859909 |  0.775178 | 0.581347 | 0.664414 |
 
-1. Dari hasil training, dua model terbaik adalah Random Forest dan XGBoost. Hal ini dibuktikan bukan hanya dengan training accuracy yang sangat tinggi, melainkan F1 Score yang sangat tinggi juga. F1 Score yang tinggi merupakan indikasi bahwa model tersebut jarang melakukan kesalahan dalam prediksi nilai benar maupun salah. Penjelasan F1 Score akan dijelaskan lebih dalam pada tahap Evaluation. 
+1. From the training results, the two best models are Random Forest and XGBoost. This is proven not only by the very high training accuracy, but also by the very high F1 Score. A high F1 Score is an indication that the model rarely makes mistakes in predicting true or false values. The explanation of the F1 Score will be explained in more depth at the Evaluation stage.
 
-2. Dapat diamati juga bahwa dari dataset drop One Hot Encoded dan Ordinal Encoded, terdapat perubahan yang cukup signifikan (peningkatan hingga dua persen) pada training accuracy. Hal ini menunjukkan pentingnya mengawetkan ordinalitas pada dataset (jika ada), yang dalam hal ini ada terutama pada fitur educationClass. 
+2. It can also be observed that from the One Hot Encoded and Ordinal Encoded drop datasets, there is a significant change (up to two percent increase) in training accuracy. This shows the importance of preserving ordinality in the dataset (if any), which in this case is mainly in the educationClass feature.
 
-3. Pengujian prediksi terakhir akan menggunakan test data dari test_ord, dikarenakan dataset ini mengimplementasikan Ordinal Encoding dan memiliki tingkat integritas yang lebih tinggi dari dataset imputasi. Mengingat bahwa jumlah dataset ini melimpah dari awal, metode Drop tetap menjadi metode Data Handling terbaik karena pengawetan integritasnya. 
-
-
-***Testing dan Prediksi Akhir***
-
----
-
-Melihat hasil dari hasil training diatas, terutama dari test_dum dan test_ord, dapat dilihat bahwa terjadi peningkatan akurasi dari dua model dengan akurasi tertinggi, yaitu Random Forest dan XGBoost. Hal ini membenarkan bahwa penting untuk menyimpan fitur ordinality (jika ada) yang dalam hal ini ada pada dataset, terutama educationClass. 
+3. The final prediction test will use test data from test_ord, because this dataset implements Ordinal Encoding and has a higher level of integrity than the imputation dataset. Given that the number of this dataset is abundant from the beginning, the Drop method remains the best Data Handling method because of its integrity preservation.
 
 
-Secara konsisten, model Random Forest dan XGBoost menghasilkan akurasi dan F1 Score yang tinggi, sebuah indikasi dari model yang unggul. 
-
-
-Pengujian prediksi terakhir akan menggunakan test data dari test_ord dikarenakan dataset ini mengimplementasikan metode Drop dan Ordinal Encoding sehingga dataset ini menjaga sifat ordinalitasnya dan memiliki tingkat integritas yang lebih tinggi dari dataset imputasi. Mengingat bahwa jumlah dataset ini melimpah dari awal, metode Drop tetap menjadi metode Data Handling terbaik karena pengawetan integritasnya. 
-
-Metode Testing akan sama dengan metode Training, menggunakan Pipeline untuk meningkatkan efisiensi Testing. 
-
-
-***Hasil Testing***
+***Testing and Final Predictions***
 
 ---
 
-Table 3.0 Evaluasi test Accuracy, Precision, Recall, dan F1 Score data Dropped One Hot Encoded
+Looking at the results of the training results above, especially from test_dum and test_ord, it can be seen that there is an increase in accuracy from the two models with the highest accuracy, namely Random Forest and XGBoost. This confirms that it is important to store ordinality features (if any) which in this case are in the dataset, especially educationClass.
+
+Consistently, the Random Forest and XGBoost models produced high accuracy and F1 Score, an indication of a superior model.
+
+The final prediction test will use test data from test_ord because this dataset implements the Drop and Ordinal Encoding methods so that this dataset maintains its ordinality properties and has a higher level of integrity than the imputation dataset. Given that the number of this dataset is abundant from the beginning, the Drop method remains the best Data Handling method because of its integrity preservation.
+
+The Testing method will be the same as the Training method, using Pipeline to increase Testing efficiency.
+
+
+***Testing Results***
+
+---
+
+Table 3.0 Evaluation of test Accuracy, Precision, Recall, and F1 Score data Dropped One Hot Encoded
 | Model        | Accuracy | Precision | Recall   | F1-Score |
 |--------------|----------|-----------|----------|----------|
 |      KNN     | 0.858943 |  0.770925 | 0.619469 | 0.686948 |
@@ -610,7 +609,7 @@ Table 3.0 Evaluasi test Accuracy, Precision, Recall, dan F1 Score data Dropped O
 |    XGBoost   | 0.940084 |  0.909438 | 0.844248 | 0.875631 |
 |   AdaBoost   |  0.86845 |  0.772126 | 0.671681 |  0.71841 |
 
-Table 3.1 Evaluasi test Accuracy,  Precision, Recall, dan F1 Score data Dropped Ordinal Encoded
+Table 3.1 Evaluation of test Accuracy, Precision, Recall, and F1 Score data Dropped Ordinal Encoded
 | Model        | Accuracy | Precision | Recall   | F1-Score |
 |--------------|----------|-----------|----------|----------|
 |      KNN     | 0.853858 |   0.77686 | 0.582301 | 0.665655 |
@@ -618,7 +617,7 @@ Table 3.1 Evaluasi test Accuracy,  Precision, Recall, dan F1 Score data Dropped 
 |    XGBoost   | 0.941853 |  0.897342 | 0.866372 | 0.881585 |
 |   AdaBoost   | 0.860491 |  0.759086 | 0.646903 | 0.698519 |
 
-Table 3.2 Evaluasi training Accuracy, Precision, Recall, dan F1 Score data KNN Imputed Ordinal Encoded
+Table 3.2 Evaluation of training Accuracy, Precision, Recall, and F1 Score of KNN data Imputed Ordinal Encoded
 | Model        | Accuracy | Precision | Recall   | F1-Score |
 |--------------|----------|-----------|----------|----------|
 |      KNN     | 0.845855 |  0.762911 | 0.541216 |  0.63322 |
@@ -626,28 +625,28 @@ Table 3.2 Evaluasi training Accuracy, Precision, Recall, dan F1 Score data KNN I
 |    XGBoost   | 0.938588 |  0.895522 | 0.849292 | 0.871795 |
 |   AdaBoost   | 0.854452 |  0.751025 | 0.610325 | 0.673404 |
 
-Ringkasan dan visualisasi dari metode-metode data handling, dan akurasinya dapat dilihat sebagai berikut. 
+A summary and visualization of the data handling methods, and their accuracy can be seen as follows.
 
-![Test Acc](Sub1_PA/testAcc.png?raw=true "Test Accuracies Result")
-Gambar 5.0: Hasil testing
+![Test Acc](Sub1_pa/testAcc.png?raw=true "Test Accuracies Result")
+Figure 5.0: Testing results
 
-Hasil tes yang akan ditinjau, dan digunakan untuk prediksi akhir, adalah dari test data dengan Dropped Encoded. Hal ini dikarenakan metode Drop adalah metode terbaik dalam menjaga integritas data, dimana hasilnya dapat dilihat dari visualisasi Confusion Matrix berikut. 
+The test results that will be reviewed, and used for the final prediction, are from the test data with Dropped Encoded. This is because the Drop method is the best method in maintaining data integrity, where the results can be seen from the following Confusion Matrix visualization.
 
-![Confusion Matrix](Sub1_PA/confusionMatrix.png?raw=true "Test Confusion Matrix")
-Gambar 5.1: Confusion matrix testing
+![Confusion Matrix](sub1_pa/confusionMatrix.png?raw=true "Test Confusion Matrix")
+Figure 5.1: Confusion matrix testing
 
 
-***Hasil dan Kesimpulan Proyek*** 
+***Project Results and Conclusions*** 
 ---
 
-Berdasarkan dari hasil Data Understanding, Data Preparation, Model Development, dan Evaluation, kita dapat menyimpulkan beberapa hal berikut. 
+Based on the results of Data Understanding, Data Preparation, Model Development, and Evaluation, we can conclude the following things.
 
-1. Menjawab Problem Statement 1: Fitur-fitur yang paling berpengaruh terhadap income pada problem ini adalah educationClass, status, dan relationship. 
-2. Menjawab Probelm Statement 2: **Ya, income dapat diprediksi,** dan berdasarkan nilai *Accuracy, Recall, Precision, dan F1 Score*, model Random Forest adalah model dengan performa terbaik, mencapai akurasi hingga 95,4%, presisi hingga 93%, recall 88,3%, dan F1Score 90,6%. Hal ini merupakan salah satu bentuk kelebihan dari Random Forest yaitu sifatnya yang melakukan *feature selection* secara implisit. Ditambah lagi sifat yang diwariskan dari *ensemble learning*, yaitu tahan pada bias dan overfitting. 
-3. Terdapat pengaruh yang dapat diamati dalam bentuk peningkatan performa model jika pengawetan ordinalitas (jika ada dalam dataset) dilakukan.
-4. *KNN Imputation* memiliki dampak yang kurang signifikan jika dibandingkan dengan poin nomor 3, namun performa tetap meningkat.
-
-Berdasarkan hasil-hasil penemuan di atas, dapat disimpulkan bahwa proyek ini berhasil dan berjalan sesuai dengan keinginan Penulis, yaitu menjawab Problem Statements dan mencapai Predictive Modelling Goals yang dirumuskan, serta berhasil mengobservasi perbedaan ordinalitas dan pengaruh KNN Imputation terhadap dataset. 
+1. Answering Problem Statement 1: The features that have the most influence on income in this problem are educationClass, status, and relationship.
+2. Answering Problem Statement 2: Yes, income can be predicted, and based on the Accuracy, Recall, Precision, and F1 Score values , the Random Forest model is the model with the best performance, achieving an accuracy of up to 95.4%, a precision of up to 93%, a recall of 88.3%, and an F1Score of 90.6%. This is one of the advantages of Random Forest, namely its nature of performing feature selection implicitly. Plus the properties inherited from ensemble learning , namely resistance to bias and overfitting.
+3. There is an observable effect in the form of increased model performance if ordinality preservation (if present in the dataset) is performed.
+4. KNN Imputation has a less significant impact compared to point number 3, but performance still increases.
+   
+Based on the findings above, it can be concluded that this project was successful and ran according to the Author's wishes, namely answering the Problem Statements and achieving the formulated Predictive Modeling Goals, and successfully observing the differences in ordinality and the influence of KNN Imputation on the dataset.
 
 
 
