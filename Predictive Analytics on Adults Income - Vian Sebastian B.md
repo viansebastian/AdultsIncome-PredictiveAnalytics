@@ -26,7 +26,7 @@ At the individual level, it is hoped that the results of this project will provi
 **Problem Statements**
 1. Of the various features, which has the most influence on income?
 2. With certain characteristics, can income be predicted?
-3. 
+
 *income refers to annual income.
 
 **Predictive Modelling Goals**
