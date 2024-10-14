@@ -19,27 +19,24 @@ This project is a small tool to help solve the problem of difficulty in finding 
 
 Stakeholder dan sasaran: 
 1. Government 
-As the highest level organization in a country, the government can make good policies and changes, in order to improve the quality of life of its people. One way is to create/improve the system in the country to encourage the advancement of its human resources.
+- As the highest level organization in a country, the government can make good policies and changes, in order to improve the quality of life of its people. One way is to create/improve the system in the country to encourage the advancement of its human resources.
 2. Individual 
-At the individual level, it is hoped that the results of this project will provide insight into important factors that can improve the quality of life, through work and employment with high annual incomes.
+- At the individual level, it is hoped that the results of this project will provide insight into important factors that can improve the quality of life, through work and employment with high annual incomes.
 
 **Problem Statements**
 1. Of the various features, which has the most influence on income?
 2. With certain characteristics, can income be predicted?
-3. 
+   
 *income refers to annual income.
 
 **Predictive Modelling Goals**
 1. Knowing the features that have a high relationship to income.
 2. Able to predict income with an accuracy above 90%.
 
-**Solution Statements (Metodologi)**
+**Solution Statements (Methodology)**
 1. The target feature in this dataset is a boolean variable between >50k and <= 50k, so this is a Classification prediction case.
-
 2. Perform Exploratory Data Analysis to obtain meaningful information in the data and understand the dynamics of the features.
-
 3. Testing the differences between missing values ​​handling techniques, and their impact on the accuracy of machine learning models.
-
 4. Create a machine learning model that can predict income with an accuracy above 90%
 
 5. Using Accuracy, Precision, Recall, F1-Score, and Confusion Matrix to evaluate model performance.
