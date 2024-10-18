@@ -354,7 +354,7 @@ In the visualization of numeric features against income, it can be seen that the
 
 3. In Figures 2.2 and 2.4, status and relationship, it can be seen that samples in healthy marital relationships will have higher incomes compared to other statuses, and this is confirmed in the analysis of relationships.
 
-![Correlation matrix](sub1_pa/corrMat.png?raw=true "Correlation Matrix")
+![Correlation matrix](Sub1_PA/corrMat.png?raw=true "Correlation Matrix")
 Figure 3.0: Correlation matrix of variables
 
 The results of the correlation matrix above show that strong features such as educationClass are not too far from the correlation value with low values, such as capital-gain. Therefore, no more column drops will be performed.
@@ -547,7 +547,7 @@ F1 Score is a harmonic value that uses precision and Recall, meaning that a high
 
 ---
 - Visualization
-![Train Acc](sub1_pa/trainAcc.png?raw=true "Train Accuracies Result")
+![Train Acc](Sub1_PA/trainAcc.png?raw=true "Train Accuracies Result")
 Figure 4.0: Model training results
 
 Table 2.0 Evaluation of training Accuracy, Precision, Recall, and F1 Score data Dropped One Hot Encoded
@@ -624,12 +624,12 @@ Table 3.2 Evaluation of training Accuracy, Precision, Recall, and F1 Score of KN
 
 A summary and visualization of the data handling methods, and their accuracy can be seen as follows.
 
-![Test Acc](Sub1_pa/testAcc.png?raw=true "Test Accuracies Result")
+![Test Acc](Sub1_PA/testAcc.png?raw=true "Test Accuracies Result")
 Figure 5.0: Testing results
 
 The test results that will be reviewed, and used for the final prediction, are from the test data with Dropped Encoded. This is because the Drop method is the best method in maintaining data integrity, where the results can be seen from the following Confusion Matrix visualization.
 
-![Confusion Matrix](sub1_pa/confusionMatrix.png?raw=true "Test Confusion Matrix")
+![Confusion Matrix](Sub1_PA/confusionMatrix.png?raw=true "Test Confusion Matrix")
 Figure 5.1: Confusion matrix testing
 
 
